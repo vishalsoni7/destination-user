@@ -1,0 +1,23 @@
+  [
+  {
+    "name": "Barcelona",
+    "city": "Barcelona",
+    "country": "Spain",
+    "description": "Barcelona is a vibrant city on the northeastern coast of Spain, known for its stunning architecture, beautiful beaches, and rich cultural heritage.",
+    "rating": 4.7
+  },
+  {
+    "name": "Sydney",
+    "city": "Sydney",
+    "country": "Australia",
+    "description": "Sydney is the largest city in Australia, famous for its iconic Sydney Opera House, stunning harbor, and beautiful beaches like Bondi Beach.",
+    "rating": 4.8
+  },
+  {
+    "name": "Kyoto",
+    "city": "Kyoto City",
+    "country": "Japan",
+    "description": "Kyoto, often referred to as the heart of Japan.",
+    "rating": 4
+  }
+]

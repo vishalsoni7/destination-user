@@ -1,32 +1,37 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const cors = require('cors');
+const cors = require("cors");
 
-const initializeDatabase = require('./db')
+const initializeDatabase = require("./db");
 
-const destinationRouter = require('./routers/destination.router')
+const destinationRouter = require("./routers/destination.router");
 
-const userRouter = require('./routers/user.router')
+const userRouter = require("./routers/user.router");
 
-app.use(express.json())
+app.use(express.json());
 
-initializeDatabase()
+initializeDatabase();
 
-app.use(cors())
+const corsOptions = {
+  origin: "*",
+  optionsSuccessStatus: 200,
+};
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the TripAdvisor realm.')
+app.use(cors(corsOptions));
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the TripAdvisor realm.");
 });
 
-app.use('/destinations', userRouter)
+app.use("/destinations", userRouter);
 
-app.use('/destinations', destinationRouter)
+app.use("/destinations", destinationRouter);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ error: 'something went wrong' });
+  res.status(500).json({ error: "something went wrong" });
 });
 
 app.listen(3000, () => {
-  console.log('server started');
+  console.log("server started");
 });

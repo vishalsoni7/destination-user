@@ -12,12 +12,12 @@ app.use(express.json());
 
 initializeDatabase();
 
-const corsOptions = {
-  origin: "*",
-  optionsSuccessStatus: 200,
-};
+// const corsOptions = {
+//   origin: "*",
+//   optionsSuccessStatus: 200,
+// };
 
-app.use(cors(corsOptions));
+app.use(cors("*"));
 
 app.get("/", (req, res) => {
   res.send("Welcome to the TripAdvisor realm.");
